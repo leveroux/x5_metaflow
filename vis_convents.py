@@ -1,7 +1,4 @@
 from metaflow import FlowSpec, Parameter, step, retry, conda_base
-import numpy as np
-import tensorflow as tf
-from tensorflow import keras
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
@@ -47,6 +44,9 @@ class Visualize(FlowSpec):
     
     @step
     def start(self):
+        import numpy as np
+        import tensorflow as tf
+        from tensorflow import keras
         # Set up a model that returns the activation values for our target layer
         self.model = keras.applications.ResNet50V2(weights="imagenet", include_top=False)
         self.layer = self.model.get_layer(name=self.layer_name)
