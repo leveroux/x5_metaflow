@@ -58,7 +58,7 @@ class Visualize(FlowSpec):
     def preprocess(self):
         # Compute image inpu    ts that maximize per-filter activations
         # for the first 64 filters of our target layer
-        self.filter_index_list = range(1)
+        self.filter_index_list = range(64)
         self.next(self.initialize_image, foreach = 'filter_index_list')
     
     @step
