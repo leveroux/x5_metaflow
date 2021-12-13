@@ -1,4 +1,4 @@
-from metaflow import FlowSpec, Parameter, step, retry
+from metaflow import FlowSpec, Parameter, step, retry, conda_base
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
